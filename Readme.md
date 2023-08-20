@@ -1,4 +1,5 @@
 # EbbingHaus Planner
+![image](https://github.com/xshen053/ebbinghaus-plan-scheduler/assets/97472036/4c28ccec-8bfa-4de6-9404-7ee5326394c0)
 
 # Frontend Start
 
