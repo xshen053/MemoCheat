@@ -17,12 +17,16 @@ Still Under development!!
 
 # Frontend Start
 
+go to `src/ebbinghaus_client`
+
 ```
 npm install
 npm start
 ```
 
 # Backend start
+
+go to `/src/ebbinghaus_planner`
 
 ```
 docker-compose up -d
