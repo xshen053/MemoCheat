@@ -1,5 +1,19 @@
-# EbbingHaus Planner
+# Dynamic EbbingHaus-based Assignment Planner
+
 ![image](https://github.com/xshen053/ebbinghaus-plan-scheduler/assets/97472036/4c28ccec-8bfa-4de6-9404-7ee5326394c0)
+
+There are many task (memory) planners in existence, but the problem is they are either not flexible or hard to get started with:
+
+- some need you to install an app and register an account.
+- some can automatically generate a list, but you cannot insert new task in that list!
+
+But what if I only want a task planner that is **flexible** and **easy to use**?
+
+This is _A more flexiable Task Planner_
+
+you can add your task(memory), and it will automatically calculate review points based on `Ebbinghaus's Forgetting Curve` and show the next time you need to review on a calendar!
+
+Still Under development!!
 
 # Frontend Start
 
