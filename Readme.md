@@ -11,7 +11,7 @@ But what if I only want a task planner that is **flexible** and **easy to use**?
 
 This is _A more flexiable Task Planner_
 
-you can add your task(memory), and it will automatically calculate review points based on `Ebbinghaus's Forgetting Curve` and show the next time you need to review on a calendar!
+you can add your task(memory), and it will automatically calculate review dates based on `Ebbinghaus's Forgetting Curve` and show the next time you need to review on a calendar!
 
 Still Under development!!
 
