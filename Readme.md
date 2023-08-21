@@ -72,3 +72,25 @@ I use python virtual environment to make sure it doesn't affect my local environ
 python3 -m venv ebbinghaus-env
 source ebbinghaus-env/bin/activate
 ```
+
+## change the model
+
+- Modify models.py
+
+After modifying your models, you'll need to create and run migrations to update the database schema.
+
+```
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+
+# Package
+
+```
+npm install moment-timezone
+npm install @mui/icons-material
+npm install framer-motion
+npm install styled-components
+
+```

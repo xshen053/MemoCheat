@@ -81,9 +81,9 @@ WSGI_APPLICATION = "ebbinghaus_planner.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ebbinghaus_db',
-        'USER': 'user',
-        'PASSWORD': 'password',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'your_password',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -115,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 

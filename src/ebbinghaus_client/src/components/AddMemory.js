@@ -7,10 +7,13 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
 function AddMemory() {
   const [title, setTitle] = useState("");
   const [open, setOpen] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   const handleSubmit = () => {
     axios
@@ -21,6 +24,7 @@ function AddMemory() {
         console.log(response.data);
         setTitle("");
         setOpen(false);
+        setSnackbarOpen(true);
       })
       .catch((error) => {
         console.error("There was an error adding the memory:", error);
@@ -32,6 +36,15 @@ function AddMemory() {
       <Fab
         color="primary"
         aria-label="add"
+        sx={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          backgroundColor: "#4b2e83", // This is your custom color.
+          "&:hover": {
+            backgroundColor: "#85754d", // This is a slightly darker shade for the hover effect.
+          },
+        }}
         style={{ position: "fixed", bottom: "20px", right: "20px" }}
         onClick={() => setOpen(true)}
       >
@@ -83,13 +96,28 @@ function AddMemory() {
               transition: "background-color 0.3s",
             }}
             hover={{
-              backgroundColor: "#1976D2", // A slightly darker shade of blue for hover effect
+              backgroundColor: "#1976D2",
             }}
           >
             Add
           </Button>
         </Box>
       </Modal>
+
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={() => setSnackbarOpen(false)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setSnackbarOpen(false)}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          Memory successfully added!
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
