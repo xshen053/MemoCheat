@@ -15,6 +15,7 @@ function MemoryCalendar() {
       .get("http://127.0.0.1:8000/api/memory/")
       .then((response) => {
         const formattedEvents = [];
+
         response.data.forEach((memory) => {
           memory.review_dates.forEach((reviewDateObj) => {
             formattedEvents.push({

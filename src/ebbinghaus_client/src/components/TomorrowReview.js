@@ -4,7 +4,7 @@ import moment from "moment-timezone";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 
 function TomorrowReview() {
   const [memories, setMemories] = useState([]);
@@ -34,22 +34,22 @@ function TomorrowReview() {
   // Note: Since marking memories as reviewed typically applies to today's date,
   // you might not need the marking functionality for tomorrow's memories.
   // I've omitted it for clarity, but you can add it back if needed.
-  function markMemoryAsReviewed(memoryId) {
-    axios
-      .post(`http://127.0.0.1:8000/mark_as_reviewed/${memoryId}/`)
-      .then((response) => {
-        console.log(response.data);
-        if (response.data.message === "Memory marked as reviewed.") {
-          // Remove this memory from the list
-          setMemories((prevMemories) =>
-            prevMemories.filter((memory) => memory.id !== memoryId)
-          );
-        }
-      })
-      .catch((error) => {
-        console.error("Error marking memory as reviewed:", error);
-      });
-  }
+  // function markMemoryAsReviewed(memoryId) {
+  //   axios
+  //     .post(`http://127.0.0.1:8000/mark_as_reviewed/${memoryId}/`)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       if (response.data.message === "Memory marked as reviewed.") {
+  //         // Remove this memory from the list
+  //         setMemories((prevMemories) =>
+  //           prevMemories.filter((memory) => memory.id !== memoryId)
+  //         );
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error marking memory as reviewed:", error);
+  //     });
+  // }
 
   return (
     <div>
@@ -73,18 +73,6 @@ function TomorrowReview() {
               <Typography variant="h5" component="div">
                 {memory.title}
               </Typography>
-              <Button
-                variant="contained"
-                color="primary"
-                sx={{
-                  marginTop: 2,
-                  backgroundColor: "#4b2e83",
-                  "&:hover": { backgroundColor: "#85754d" },
-                }} // Custom color and hover effect
-                onClick={() => markMemoryAsReviewed(memory.id)}
-              >
-                Mark as Reviewed
-              </Button>
             </CardContent>
           </Card>
         ))}

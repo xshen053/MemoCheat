@@ -24,6 +24,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-backend": "cd ../ebbinghaus_planner && source ebbinghaus-env/bin/activate && python manage.py runserver",
+    "dev": "concurrently \"npm start\" \"npm run start-backend\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -45,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
   }
 }

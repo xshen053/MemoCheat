@@ -5,10 +5,21 @@ from .utils import calculate_review_dates
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from datetime import date
+from django.utils import timezone
 
 class MemoryListCreateView(generics.ListCreateAPIView):
-    queryset = Memory.objects.all()
     serializer_class = MemorySerializer
+
+    def get_queryset(self):
+        today_date = timezone.now().date()
+        
+        # Get memories that have a review scheduled for today
+        memories_with_today_review = Memory.objects.filter(memoryreview__review_date__date=today_date)
+        
+        # Exclude memories that have been reviewed today
+        # memories_to_review_today = memories_with_today_review.exclude(memoryreview__reviewed=True, memoryreview__review_date__date=today_date)
+
+        return memories_with_today_review
 
     def perform_create(self, serializer):
         memory = serializer.save()
@@ -19,6 +30,9 @@ class MemoryListCreateView(generics.ListCreateAPIView):
         for review_date in review_dates_list:
             rd, _ = ReviewDate.objects.get_or_create(date=review_date)
             memory.review_dates.add(rd)
+
+
+
 
 @api_view(['POST'])
 def mark_as_reviewed(request, memory_id):
