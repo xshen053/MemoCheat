@@ -10,16 +10,18 @@ from django.utils import timezone
 class MemoryListCreateView(generics.ListCreateAPIView):
     serializer_class = MemorySerializer
 
-    def get_queryset(self):
-        today_date = timezone.now().date()
+    # def get_queryset(self):
+    #     today_date = timezone.now().date()
         
-        # Get memories that have a review scheduled for today
-        memories_with_today_review = Memory.objects.filter(memoryreview__review_date__date=today_date)
+    #     # Get memories that have a review scheduled for today
+    #     memories_with_today_review = Memory.objects.filter(memoryreview__review_date__date=today_date)
         
-        # Exclude memories that have been reviewed today
-        # memories_to_review_today = memories_with_today_review.exclude(memoryreview__reviewed=True, memoryreview__review_date__date=today_date)
+    #     # Exclude memories that have been reviewed today
+    #     # memories_to_review_today = memories_with_today_review.exclude(memoryreview__reviewed=True, memoryreview__review_date__date=today_date)
 
-        return memories_with_today_review
+    #     return memories_with_today_review
+    def get_queryset(self):
+        return Memory.objects.all()
 
     def perform_create(self, serializer):
         memory = serializer.save()
