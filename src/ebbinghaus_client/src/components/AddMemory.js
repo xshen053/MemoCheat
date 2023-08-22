@@ -113,7 +113,16 @@ function AddMemory() {
         <Alert
           onClose={() => setSnackbarOpen(false)}
           severity="success"
-          sx={{ width: "100%" }}
+          sx={{
+            width: "100%",
+            bgcolor: "#4b2e83", // Blue background color 4b2e83
+            color: "#fff", // White text color
+            ".MuiAlert-icon": { color: "#e8e3d3" }, // This targets the checkmark icon e8e3d3
+            ".MuiAlert-message": {
+              color: "#e8e3d3",
+              fontWeight: "bold", // Bold text
+            }, // Yellow text color for the "Good Job!" message
+          }}
         >
           Memory successfully added!
         </Alert>
