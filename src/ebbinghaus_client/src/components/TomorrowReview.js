@@ -4,10 +4,13 @@ import moment from "moment-timezone";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import "../css/style.css";
 // import Button from "@mui/material/Button";
 
 function TomorrowReview() {
   const [memories, setMemories] = useState([]);
+  const [isMemoryListVisible, setMemoryListVisible] = useState(false);
+
   const tomorrow = moment()
     .tz("America/Los_Angeles")
     .startOf("day")
@@ -53,30 +56,37 @@ function TomorrowReview() {
 
   return (
     <div>
-      <h1>Tomorrow's Review</h1>
-      <div>
-        {memories.map((memory) => (
-          <Card
-            key={memory.id}
-            sx={{
-              maxWidth: 345,
-              margin: "20px auto",
-              backgroundColor: "#e8e3d3",
-              transition: "transform 0.3s, box-shadow 0.3s",
-              ":hover": {
-                transform: "scale(1.05)",
-                boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-              },
-            }}
-          >
-            <CardContent>
-              <Typography variant="h5" component="div">
-                {memory.title}
-              </Typography>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+      <h1
+        className="title-hover-effect"
+        onClick={() => setMemoryListVisible(!isMemoryListVisible)}
+      >
+        Tomorrow's Review
+      </h1>
+      {isMemoryListVisible && (
+        <div>
+          {memories.map((memory) => (
+            <Card
+              key={memory.id}
+              sx={{
+                maxWidth: 345,
+                margin: "20px auto",
+                backgroundColor: "#e8e3d3",
+                transition: "transform 0.3s, box-shadow 0.3s",
+                ":hover": {
+                  transform: "scale(1.05)",
+                  boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
+                },
+              }}
+            >
+              <CardContent>
+                <Typography variant="h5" component="div">
+                  {memory.title}
+                </Typography>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

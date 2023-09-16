@@ -34,8 +34,6 @@ class MemoryListCreateView(generics.ListCreateAPIView):
             memory.review_dates.add(rd)
 
 
-
-
 @api_view(['POST'])
 def mark_as_reviewed(request, memory_id):
     try:

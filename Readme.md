@@ -94,3 +94,6 @@ npm install framer-motion
 npm install styled-components
 
 ```
+
+concurrently run frontend and backend package
+`npm install --save-dev concurrently`

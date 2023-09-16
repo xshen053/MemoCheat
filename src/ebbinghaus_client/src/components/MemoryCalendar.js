@@ -4,10 +4,11 @@ import moment from "moment-timezone";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import "../css/MemoryCalendar.css";
 
 const localizer = momentLocalizer(moment);
 
-function MemoryCalendar() {
+function MemoryCalendar(props) {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -26,7 +27,10 @@ function MemoryCalendar() {
               end: new Date(
                 moment(reviewDateObj.date).tz("America/Los_Angeles").toDate()
               ),
-              color: memory.title === "Special Event" ? "blue" : "#85754d",
+              color:
+                memory.title === "Special Event"
+                  ? "blue"
+                  : "rgb(233, 221, 174)",
             });
           });
         });
@@ -39,8 +43,8 @@ function MemoryCalendar() {
   }, []);
 
   return (
-    <div>
-      <h1>Review Calendar</h1>
+    <div style={props.style}>
+      <h1 className="title-hover-effect">Review Calendar</h1>
       <Calendar
         localizer={localizer}
         events={events}

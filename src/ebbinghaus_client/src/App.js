@@ -7,7 +7,6 @@ import TomorrowReview from "./components/TomorrowReview";
 function App() {
   return (
     <div className="App">
-      <MemoryCalendar />
       <div
         style={{
           display: "flex",
@@ -21,6 +20,7 @@ function App() {
         <TodayReview />
         <TomorrowReview />
       </div>
+      <MemoryCalendar style={{ marginTop: "1000px" }} />
     </div>
   );
 }

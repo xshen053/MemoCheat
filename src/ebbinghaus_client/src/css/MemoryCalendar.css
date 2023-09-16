@@ -1,0 +1,54 @@
+/* Common style for all buttons */
+.rbc-btn-group button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #4b2e83;
+  color: white;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+/* Hover effect for all buttons */
+.rbc-btn-group button:hover {
+  background-color: #ddd;
+}
+
+.rbc-event-content {
+  color: black;
+}
+.rbc-label {
+  color: white;
+}
+/* Style for the active button */
+.rbc-btn-group button.rbc-active {
+  background-color: #fff;
+  color: black;
+}
+
+.rbc-day-bg.rbc-today {
+  background-image: url("/2.jpeg"); /* Adjust the path to point to your image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center center; /* Centers the background image */
+}
+
+.rbc-day-bg.rbc-off-range-bg {
+  background-image: url("/4.jpg"); /* Adjust the path to point to your image */
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center center; /* Centers the background image */
+}
+
+.rbc-toolbar-label {
+  color: white;
+}
+.rbc-header {
+  color: white;
+}
+
+.rbc-header.rbc-today {
+  color: black;
+}
+.rbc-month-view .rbc-row {
+  /* Assuming .rbc-row are your flex items */
+  background-color: transparent !important;
+}

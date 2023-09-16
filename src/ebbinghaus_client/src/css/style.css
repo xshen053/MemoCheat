@@ -15,3 +15,14 @@
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
+
+.title-hover-effect {
+  transition: transform 0.3s;
+  display: inline-block;
+  color: rgb(233, 221, 174);
+}
+
+.title-hover-effect:hover {
+  transform: scale(1.05);
+  cursor: pointer; /* Change the cursor to indicate that it's clickable */
+}
