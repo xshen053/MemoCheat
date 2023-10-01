@@ -21,9 +21,17 @@ class MemoryListCreateView(generics.ListCreateAPIView):
 
     #     return memories_with_today_review
     def get_queryset(self):
+        '''
+        This method is called during a GET request to determine which objects should be listed.
+        '''
         return Memory.objects.all()
 
     def perform_create(self, serializer):
+        '''
+        This method is called by the ListCreateAPIView when a POST request is made. 
+        It's responsible for actually saving the object to the database. 
+        The provided perform_create method in your MemoryListCreateView takes the saved memory and calculates its review dates.
+        '''
         memory = serializer.save()
         
         # Your algorithm to calculate the review dates goes here.
@@ -31,6 +39,13 @@ class MemoryListCreateView(generics.ListCreateAPIView):
         
         for review_date in review_dates_list:
             rd, _ = ReviewDate.objects.get_or_create(date=review_date)
+            '''
+             The ReviewDate object (rd) is then associated with the memory instance. 
+             This is made possible because of the ManyToMany relationship 
+             between Memory and ReviewDate (specified in the Memory model). 
+             The add method is used to associate the ReviewDate instance with the Memory instance, 
+             effectively creating an entry in the intermediate join table (in this case, the MemoryReview table).
+            '''
             memory.review_dates.add(rd)
 
 
