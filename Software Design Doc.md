@@ -38,14 +38,17 @@ Build a light tool harnessing memory science to helped users transform time mana
 ## High-level Architecture
 
 ### Software architecture
-
+![SA](https://github.com/xshen053/MemoCheat/blob/main/img/software-architecture.png?raw=true)
 
 ### Data Flow diagram (DFD)
+![DFD](https://github.com/xshen053/MemoCheat/blob/main/img/data-flow-diagram.png?raw=true)
+
 
 ### Database schema
+![db-schema](https://github.com/xshen053/MemoCheat/blob/main/img/memocheat-db-schema.png?raw=true)
 
 ### External services or APIs
-
+Don't have any now
 
 
 ## APIs
