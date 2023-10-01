@@ -161,11 +161,11 @@ http://127.0.0.1:8000/api/mark_as_reviewed/69/
 
 ### User stories
 
-- [ ] As a student, I want to create new memories.
-- [ ] As a student, I want to know what memories I want to review today and tomorrow
-- [ ] As a student, I want to remove a card (mark as reviewed) when I finish reviewing that card
-- [ ] As a student, if I accidentally review a card, I can withdraw
-- [ ] As a student, I want to have a calendar to know what I need to review everyday
+- [ ] As a user, I want to create new memories.
+- [ ] As a user, I want to know what memories I want to review today and tomorrow
+- [ ] As a user, I want to remove a card (mark as reviewed) when I finish reviewing that card
+- [ ] As a user, if I accidentally review a card, I can withdraw
+- [ ] As a user, I want to have a calendar to know what I need to review everyday
 
 ### Use cases
 
