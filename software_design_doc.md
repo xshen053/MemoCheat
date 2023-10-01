@@ -1,5 +1,25 @@
 # Memocheat
 
+## Table of Contents
+
+- [Background](#background)
+- [Objective](#objective)
+- [High-level Architecture](#high-level-architecture)
+  - [Software Architecture](#software-architecture)
+  - [Data Flow Diagram (DFD)](#data-flow-diagram-dfd)
+  - [Database Schema](#database-schema)
+  - [External Services or APIs](#external-services-or-apis)
+- [APIs](#apis)
+- [UI/UX Design](#uiux-design)
+- [Development Plan](#development-plan)
+  - [User Stories](#user-stories)
+  - [Use Cases](#use-cases)
+- [Testing](#testing)
+- [Installation/Usage](#installationusage)
+- [Deployment](#deployment)
+
+
+
 ## Background
 
 We are learning every day. But what we are doing is learn, forget, learn, forget. We have wasted lots of time memorizing the same things repeatedly.
@@ -30,7 +50,7 @@ Build a light tool harnessing memory science to helped users transform time mana
 
 ## APIs
 
-#### API Endpoint: /api/memory (GET)
+### API Endpoint: /api/memory (GET)
 
 * HTTP Method: GET
 
@@ -55,7 +75,7 @@ Build a light tool harnessing memory science to helped users transform time mana
 ]
 ```
 
-#### API Endpoint: /api/memory (POST)
+### API Endpoint: /api/memory (POST)
 
 * HTTP Method: POST
 
@@ -100,7 +120,7 @@ Build a light tool harnessing memory science to helped users transform time mana
     * `400 Bad Request`: If the request body is malformed or missing required attributes.
     * `500 Internal Server Error`: For general server errors.
 
-#### API Endpoint: /api/mark_as_reviewed/\<int:memory_id\>/ (POST)
+### API Endpoint: /api/mark_as_reviewed/\<int:memory_id\>/ (POST)
 
 * HTTP Method: POST
 
