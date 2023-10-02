@@ -1,5 +1,5 @@
 # Memocheat
-a tool harnessing memory science to helped users transform time management, directing focus to proactive learning over repetitive reviews.
+a tool harnessing memory science to help users transform time management, directing focus to proactive learning over repetitive reviews.
 
 
 ## Table of Contents
