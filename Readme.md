@@ -24,12 +24,12 @@
 
 We are learning every day. But what we are doing is learn, forget, learn, forget. We have wasted lots of time memorizing the same things repeatedly.
 
-There are many task (memory) planners in existence, but the problem is they are either not flexible or hard to get started with:
+I tried other task (memory) planners before, but the problem is they are either not flexible or hard to get started with:
 
 * Some need you to install an app and register an account.
 * some can automatically generate a list, but you cannot insert new task in that list!
 
-But what if I only want a planner that is light and easy to use?
+So I decided to develop one that is light and more flexible
 
 ## Objective
 
