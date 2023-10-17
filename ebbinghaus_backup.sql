@@ -635,6 +635,12 @@ COPY public.memory_memory (id, title, created_date) FROM stdin;
 116	ocamlfuse	2023-10-14 04:29:40.965972+00
 117	lox::4 scanning: string(), number(), comment()	2023-10-14 09:07:56.859151+00
 118	lox::5 representing code	2023-10-14 20:43:35.083371+00
+119	bugs::6.1 chr, ord	2023-10-15 05:51:42.127243+00
+120	BUGS::13.2	2023-10-15 06:23:40.00026+00
+121	implement scanner class	2023-10-15 18:48:56.699547+00
+122	cse452::lab1 part3 map.entry	2023-10-16 01:47:30.50636+00
+123	CSE341::lec8	2023-10-16 23:40:09.407852+00
+124	python开发技巧::10.16	2023-10-17 05:05:47.846642+00
 \.
 
 
@@ -825,7 +831,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 263	f	28	75
 264	f	28	76
 265	f	28	77
-273	f	29	73
 274	f	29	74
 275	f	29	75
 276	f	29	76
@@ -899,6 +904,7 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 249	t	27	73
 261	t	28	73
 285	t	30	73
+273	t	29	73
 287	f	30	75
 288	f	30	76
 289	f	30	77
@@ -1159,13 +1165,11 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 512	t	49	54
 524	t	50	61
 536	t	51	73
-548	f	52	125
 549	f	52	126
 550	f	52	127
 551	f	52	128
 552	f	52	129
 553	f	52	130
-560	f	53	125
 561	f	53	126
 562	f	53	127
 563	f	53	128
@@ -1290,6 +1294,8 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 655	t	61	45
 631	t	59	45
 667	t	62	61
+548	t	52	125
+560	t	53	125
 680	f	63	19
 681	f	63	91
 682	f	63	20
@@ -1336,7 +1342,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 699	t	65	100
 723	t	67	100
 687	t	64	100
-751	f	69	157
 752	f	69	37
 753	f	69	102
 754	f	69	38
@@ -1354,7 +1359,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 767	f	70	48
 768	f	70	49
 769	f	70	159
-775	f	71	125
 776	f	71	46
 777	f	71	107
 778	f	71	47
@@ -1369,7 +1373,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 791	f	72	48
 792	f	72	49
 793	f	72	159
-799	f	73	125
 800	f	73	46
 801	f	73	107
 802	f	73	47
@@ -1421,6 +1424,9 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 727	t	67	61
 691	t	64	61
 739	t	68	73
+751	t	69	157
+775	t	71	125
+799	t	73	125
 811	f	74	132
 812	f	74	55
 813	f	74	112
@@ -1561,7 +1567,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 948	f	85	170
 949	f	85	171
 938	t	85	106
-954	f	86	125
 955	f	86	151
 956	f	86	133
 957	f	86	134
@@ -1577,7 +1582,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 971	f	87	173
 972	f	87	174
 973	f	87	175
-978	f	88	125
 979	f	88	151
 980	f	88	133
 981	f	88	134
@@ -1585,7 +1589,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 983	f	88	173
 984	f	88	174
 985	f	88	175
-990	f	89	125
 991	f	89	151
 992	f	89	133
 993	f	89	134
@@ -1684,6 +1687,9 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1049	t	94	61
 1061	t	95	67
 942	t	85	73
+954	t	86	125
+990	t	89	125
+978	t	88	125
 1069	f	95	181
 1074	f	96	163
 1075	f	96	62
@@ -1749,7 +1755,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1106	t	99	27
 1118	t	100	27
 1083	t	97	131
-1157	f	103	157
 1158	f	103	28
 1159	f	103	74
 1160	f	103	152
@@ -1758,7 +1763,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1163	f	103	184
 1164	f	103	185
 1165	f	103	186
-1169	f	104	157
 1170	f	104	28
 1171	f	104	74
 1172	f	104	152
@@ -1767,7 +1771,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1175	f	104	184
 1176	f	104	185
 1177	f	104	186
-1181	f	105	157
 1182	f	105	28
 1183	f	105	74
 1184	f	105	152
@@ -1787,7 +1790,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1166	t	104	36
 1143	t	102	36
 1178	t	105	36
-1193	f	106	125
 1194	f	106	151
 1195	f	106	166
 1196	f	106	102
@@ -1816,6 +1818,10 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1121	t	100	67
 1145	t	102	73
 1133	t	101	73
+1169	t	104	157
+1157	t	103	157
+1181	t	105	157
+1193	t	106	125
 1024	t	92	36
 762	t	70	36
 1205	f	107	132
@@ -1827,7 +1833,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1211	f	107	109
 1212	f	107	110
 1213	f	107	188
-1216	f	108	73
 1217	f	108	132
 1218	f	108	37
 1219	f	108	126
@@ -1890,7 +1895,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1250	t	111	67
 1262	t	112	67
 1192	t	106	67
-1275	f	113	157
 1276	f	113	132
 1277	f	113	163
 1278	f	113	62
@@ -1901,7 +1905,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1283	f	113	123
 1284	f	113	124
 1285	f	113	190
-1287	f	114	157
 1288	f	114	132
 1289	f	114	163
 1290	f	114	62
@@ -1912,7 +1915,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1295	f	114	123
 1296	f	114	124
 1297	f	114	190
-1299	f	115	157
 1300	f	115	132
 1301	f	115	163
 1302	f	115	62
@@ -1924,7 +1926,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1308	f	115	124
 1309	f	115	190
 1310	f	116	73
-1311	f	116	157
 1312	f	116	132
 1313	f	116	163
 1314	f	116	62
@@ -1935,7 +1936,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1319	f	116	123
 1320	f	116	124
 1321	f	116	190
-1322	f	117	157
 1323	f	117	125
 1324	f	117	80
 1325	f	117	19
@@ -1950,12 +1950,16 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1204	t	107	73
 1228	t	109	73
 1240	t	110	73
+1299	t	115	157
+1287	t	114	157
+1275	t	113	157
+1311	t	116	157
+1322	t	117	157
 1330	f	117	191
 1331	f	117	192
 1332	f	117	193
 1333	f	117	194
 1263	t	112	73
-1334	f	118	157
 1335	f	118	125
 1336	f	118	80
 1337	f	118	19
@@ -1967,6 +1971,80 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1343	f	118	192
 1344	f	118	193
 1345	f	118	194
+1216	t	108	73
+1348	f	119	80
+1349	f	119	19
+1350	f	119	68
+1351	f	119	176
+1352	f	119	164
+1353	f	119	75
+1354	f	119	191
+1355	f	119	192
+1356	f	119	193
+1357	f	119	194
+1360	f	120	80
+1361	f	120	19
+1362	f	120	68
+1363	f	120	176
+1364	f	120	164
+1365	f	120	75
+1366	f	120	191
+1367	f	120	192
+1368	f	120	193
+1369	f	120	194
+1346	t	119	157
+1370	f	121	125
+1371	f	121	132
+1372	f	121	86
+1373	f	121	28
+1374	f	121	74
+1375	f	121	91
+1376	f	121	167
+1377	f	121	168
+1378	f	121	195
+1379	f	121	196
+1380	f	121	197
+1381	f	121	198
+1383	f	122	132
+1384	f	122	86
+1385	f	122	28
+1386	f	122	74
+1387	f	122	91
+1388	f	122	167
+1389	f	122	168
+1390	f	122	195
+1391	f	122	196
+1392	f	122	197
+1393	f	122	198
+1358	t	120	157
+1334	t	118	157
+1394	f	123	132
+1395	f	123	80
+1396	f	123	163
+1397	f	123	151
+1398	f	123	166
+1399	f	123	96
+1400	f	123	127
+1401	f	123	199
+1402	f	123	128
+1403	f	123	129
+1404	f	123	130
+1405	f	123	200
+1407	f	124	80
+1408	f	124	163
+1409	f	124	151
+1410	f	124	166
+1411	f	124	96
+1412	f	124	127
+1413	f	124	199
+1414	f	124	128
+1415	f	124	129
+1416	f	124	130
+1417	f	124	200
+1359	t	120	125
+1347	t	119	125
+1382	t	122	125
+1406	t	124	132
 \.
 
 
@@ -2169,6 +2247,12 @@ COPY public.memory_reviewdate (id, date) FROM stdin;
 192	2024-01-12
 193	2024-02-11
 194	2024-03-12
+195	2023-12-14
+196	2024-01-13
+197	2024-02-12
+198	2024-03-13
+199	2023-11-30
+200	2024-03-14
 \.
 
 
@@ -2239,21 +2323,21 @@ SELECT pg_catalog.setval('public.django_migrations_id_seq', 19, true);
 -- Name: memory_memory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.memory_memory_id_seq', 118, true);
+SELECT pg_catalog.setval('public.memory_memory_id_seq', 124, true);
 
 
 --
 -- Name: memory_memoryreview_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.memory_memoryreview_id_seq', 1345, true);
+SELECT pg_catalog.setval('public.memory_memoryreview_id_seq', 1417, true);
 
 
 --
 -- Name: memory_reviewdate_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.memory_reviewdate_id_seq', 194, true);
+SELECT pg_catalog.setval('public.memory_reviewdate_id_seq', 200, true);
 
 
 --
