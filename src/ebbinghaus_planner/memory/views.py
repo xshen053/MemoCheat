@@ -9,20 +9,11 @@ from django.utils import timezone
 
 class MemoryListCreateView(generics.ListCreateAPIView):
     serializer_class = MemorySerializer
-
-    # def get_queryset(self):
-    #     today_date = timezone.now().date()
-        
-    #     # Get memories that have a review scheduled for today
-    #     memories_with_today_review = Memory.objects.filter(memoryreview__review_date__date=today_date)
-        
-    #     # Exclude memories that have been reviewed today
-    #     # memories_to_review_today = memories_with_today_review.exclude(memoryreview__reviewed=True, memoryreview__review_date__date=today_date)
-
-    #     return memories_with_today_review
     def get_queryset(self):
         '''
         This method is called during a GET request to determine which objects should be listed.
+
+        Here, apprently, all are listed
         '''
         return Memory.objects.all()
 
@@ -44,7 +35,7 @@ class MemoryListCreateView(generics.ListCreateAPIView):
              This is made possible because of the ManyToMany relationship 
              between Memory and ReviewDate (specified in the Memory model). 
              The add method is used to associate the ReviewDate instance with the Memory instance, 
-             effectively creating an entry in the intermediate join table (in this case, the MemoryReview table).
+             effectively creating an en try in the intermediate join table (in this case, the MemoryReview table).
             '''
             memory.review_dates.add(rd)
 
