@@ -42,15 +42,15 @@ class MemorySerializer(serializers.ModelSerializer):
         - Followed by a dot (.)
         - Followed by another single digit (from 0 to 9)
         OR
-        - Starting from Coding
+        - Starting from [Coding]
 
         valid str:
-        9.1, 9.2, 13.1, Codingxxxxxx
+        9.1, 9.2, 13.1, [Coding]xxxxxx
 
         Returns:
             bool: True if the title matches the pattern, otherwise False.
         """
-        if title.startswith("Coding"):
+        if title.startswith("[Coding]"):
             return True
         else:
             s_wo_space = title.replace(" ", "")
