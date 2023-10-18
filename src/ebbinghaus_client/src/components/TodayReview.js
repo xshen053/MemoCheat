@@ -68,13 +68,13 @@ function TodayReview() {
         Today's Review
       </h1>
 
-      <Button
+      {/* <Button
         variant="contained"
         color="secondary"
         onClick={triggerTestSnackbar}
       >
         Test "Good Job!" Snackbar
-      </Button>
+      </Button> */}
       {isMemoryListVisible && (
         <div>
           {memories.map((memory) => (
