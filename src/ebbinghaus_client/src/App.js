@@ -4,6 +4,7 @@ import MemoryCalendar from "./components/MemoryCalendar";
 import AddMemory from "./components/AddMemory";
 import TodayReview from "./components/TodayReview";
 import TomorrowReview from "./components/TomorrowReview";
+import CodingProblemCount from "./components/IsCodingProblem"
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
           margin: "0 auto", // Center the container on the screen
         }}
       >
+        <CodingProblemCount />
         <AddMemory />
         <TodayReview />
         <TomorrowReview />
