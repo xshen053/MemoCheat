@@ -688,6 +688,17 @@ COPY public.memory_memory (id, title, created_date) FROM stdin;
 169	学英语::11/5/23	2023-11-05 17:28:03.624408+00
 170	7.10	2023-11-06 06:55:41.44966+00
 171	6.7	2023-11-06 06:56:31.392774+00
+172	8.3	2023-11-08 05:19:32.734056+00
+173	BUG::8.3	2023-11-08 05:22:03.73256+00
+174	8.8	2023-11-08 05:53:58.861051+00
+175	BUGS::6.7	2023-11-08 07:38:40.920112+00
+176	BUGS::7.10	2023-11-08 07:54:10.688524+00
+177	当一个data strucutre有两个field之间有联系的时候，写下之间的关系，思考一下，一个变的时候，另一个是否会改变	2023-11-08 22:34:19.079275+00
+178	1. Naming objects 2. Simple sentences 3. Conversation with yourself 4. Change everyday thing of your life 5. Track your life in English	2023-11-10 17:30:45.769144+00
+179	9.10	2023-11-10 17:31:16.59631+00
+180	11-1-23英语积累::11/10/23	2023-11-10 18:15:25.077908+00
+181	BUGS::5.18	2023-11-10 21:01:14.936809+00
+182	BUGS::9.10	2023-11-11 17:14:28.923415+00
 \.
 
 
@@ -986,7 +997,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 361	f	36	94
 339	t	35	24
 327	t	34	24
-370	f	37	96
 371	f	37	97
 372	f	37	98
 373	f	37	99
@@ -997,15 +1007,12 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 362	t	37	33
 351	t	36	33
 328	t	34	33
-382	f	38	102
 383	f	38	103
 384	f	38	104
 385	f	38	105
-394	f	39	102
 395	f	39	103
 396	f	39	104
 397	f	39	105
-406	f	40	102
 407	f	40	103
 408	f	40	104
 409	f	40	105
@@ -1079,37 +1086,32 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 334	t	34	87
 346	t	35	87
 358	t	36	91
-418	f	41	107
+370	t	37	96
+394	t	39	102
+406	t	40	102
 419	f	41	108
 420	f	41	109
 421	f	41	110
 427	f	42	106
-430	f	42	107
 431	f	42	108
 432	f	42	109
 433	f	42	110
-442	f	43	107
 443	f	43	108
 444	f	43	109
 445	f	43	110
-454	f	44	107
 455	f	44	108
 456	f	44	109
 457	f	44	110
-466	f	45	107
 467	f	45	108
 468	f	45	109
 469	f	45	110
-478	f	46	107
 479	f	46	108
 480	f	46	109
 481	f	46	110
-490	f	47	107
 491	f	47	108
 492	f	47	109
 493	f	47	110
 352	t	36	51
-502	f	48	107
 503	f	48	108
 504	f	48	109
 505	f	48	110
@@ -1118,7 +1120,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 482	t	47	59
 458	t	45	59
 446	t	44	59
-514	f	49	112
 515	f	49	113
 516	f	49	114
 517	f	49	115
@@ -1208,6 +1209,14 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 513	t	49	55
 525	t	50	62
 537	t	51	74
+418	t	41	107
+466	t	45	107
+478	t	46	107
+490	t	47	107
+502	t	48	107
+442	t	43	107
+454	t	44	107
+514	t	49	112
 550	f	52	127
 551	f	52	128
 552	f	52	129
@@ -1363,7 +1372,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 686	t	64	26
 698	t	65	26
 722	t	67	26
-741	f	68	152
 742	f	68	153
 743	f	68	154
 744	f	68	155
@@ -1372,7 +1380,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 699	t	65	100
 723	t	67	100
 687	t	64	100
-753	f	69	102
 754	f	69	38
 755	f	69	39
 756	f	69	40
@@ -1382,24 +1389,20 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 569	t	54	35
 760	f	70	72
 763	f	70	125
-765	f	70	107
 766	f	70	47
 767	f	70	48
 768	f	70	49
 769	f	70	159
-777	f	71	107
 778	f	71	47
 779	f	71	48
 780	f	71	49
 781	f	71	159
 786	f	72	36
 787	f	72	125
-789	f	72	107
 790	f	72	47
 791	f	72	48
 792	f	72	49
 793	f	72	159
-801	f	73	107
 802	f	73	47
 803	f	73	48
 804	f	73	49
@@ -1467,7 +1470,11 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 717	t	66	91
 729	t	67	91
 693	t	64	91
-813	f	74	112
+741	t	68	152
+753	t	69	102
+777	t	71	107
+801	t	73	107
+789	t	72	107
 814	f	74	56
 815	f	74	57
 816	f	74	58
@@ -1597,6 +1604,7 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 896	t	81	68
 884	t	80	68
 932	t	84	74
+813	t	74	112
 808	t	74	101
 945	f	85	167
 946	f	85	168
@@ -1756,13 +1764,11 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 976	t	88	18
 964	t	87	18
 1082	t	97	27
-1136	f	101	96
 1137	f	101	29
 1138	f	101	97
 1139	f	101	98
 1140	f	101	99
 1141	f	101	182
-1148	f	102	96
 1149	f	102	29
 1150	f	102	97
 1151	f	102	98
@@ -1773,19 +1779,16 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1106	t	99	27
 1118	t	100	27
 1083	t	97	131
-1160	f	103	152
 1161	f	103	153
 1162	f	103	183
 1163	f	103	184
 1164	f	103	185
 1165	f	103	186
-1172	f	104	152
 1173	f	104	153
 1174	f	104	183
 1175	f	104	184
 1176	f	104	185
 1177	f	104	186
-1184	f	105	152
 1185	f	105	153
 1186	f	105	183
 1187	f	105	184
@@ -1802,7 +1805,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1166	t	104	36
 1143	t	102	36
 1178	t	105	36
-1196	f	106	102
 1197	f	106	38
 1198	f	106	103
 1199	f	106	104
@@ -1857,21 +1859,24 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1100	t	98	91
 1112	t	99	91
 1124	t	100	91
+1136	t	101	96
+1148	t	102	96
+1184	t	105	152
+1172	t	104	152
+1160	t	103	152
+1196	t	106	102
 1024	t	92	36
 762	t	70	36
-1208	f	107	107
 1209	f	107	47
 1210	f	107	108
 1211	f	107	109
 1212	f	107	110
 1213	f	107	188
-1220	f	108	107
 1221	f	108	47
 1222	f	108	108
 1223	f	108	109
 1224	f	108	110
 1225	f	108	188
-1232	f	109	107
 1233	f	109	47
 1234	f	109	108
 1235	f	109	109
@@ -1879,7 +1884,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1237	f	109	188
 1155	t	103	45
 1167	t	104	45
-1244	f	110	107
 1245	f	110	47
 1246	f	110	108
 1247	f	110	109
@@ -1988,6 +1992,10 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1303	t	115	87
 1315	t	116	87
 1327	t	117	176
+1208	t	107	107
+1232	t	109	107
+1220	t	108	107
+1244	t	110	107
 1330	f	117	191
 1331	f	117	192
 1332	f	117	193
@@ -2035,14 +2043,12 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1358	t	120	157
 1334	t	118	157
 1394	f	123	132
-1399	f	123	96
 1400	f	123	127
 1401	f	123	199
 1402	f	123	128
 1403	f	123	129
 1404	f	123	130
 1405	f	123	200
-1411	f	124	96
 1412	f	124	127
 1413	f	124	199
 1414	f	124	128
@@ -2055,14 +2061,12 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1406	t	124	132
 1383	t	122	132
 584	t	55	132
-1424	f	125	102
 1425	f	125	138
 1426	f	125	82
 1427	f	125	139
 1428	f	125	140
 1429	f	125	141
 1430	f	125	201
-1437	f	126	102
 1438	f	126	138
 1439	f	126	82
 1440	f	126	139
@@ -2077,7 +2081,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 309	t	32	80
 1431	t	126	80
 1336	t	118	80
-1450	f	127	107
 1451	f	127	142
 1452	f	127	88
 1453	f	127	143
@@ -2119,7 +2122,11 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1351	t	119	176
 1339	t	118	176
 1387	t	122	91
-1463	f	128	107
+1399	t	123	96
+1411	t	124	96
+1424	t	125	102
+1437	t	126	102
+1450	t	127	107
 1464	f	128	142
 1465	f	128	88
 1466	f	128	143
@@ -2140,7 +2147,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1482	f	129	204
 1470	t	129	28
 1434	t	126	28
-1488	f	130	96
 1489	f	130	164
 1490	f	130	153
 1491	f	130	183
@@ -2148,7 +2154,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1493	f	130	155
 1494	f	130	156
 1495	f	130	205
-1501	f	131	96
 1502	f	131	164
 1503	f	131	153
 1504	f	131	183
@@ -2160,7 +2165,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1471	t	129	151
 1483	t	130	151
 1496	t	131	151
-1514	f	132	152
 1515	f	132	167
 1516	f	132	38
 1517	f	132	103
@@ -2170,7 +2174,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1521	f	132	206
 1484	t	130	37
 1522	f	133	37
-1527	f	133	152
 1528	f	133	167
 1529	f	133	38
 1530	f	133	103
@@ -2181,7 +2184,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1472	t	129	37
 1497	t	131	37
 1509	t	132	37
-1540	f	134	152
 1541	f	134	167
 1542	f	134	38
 1543	f	134	103
@@ -2191,7 +2193,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1547	f	134	206
 1535	t	134	37
 1551	f	135	74
-1553	f	135	102
 1554	f	135	127
 1555	f	135	47
 1556	f	135	108
@@ -2199,7 +2200,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1558	f	135	49
 1559	f	135	159
 1560	f	135	207
-1566	f	136	102
 1567	f	136	127
 1568	f	136	47
 1569	f	136	108
@@ -2207,7 +2207,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1571	f	136	49
 1572	f	136	159
 1573	f	136	207
-1579	f	137	102
 1580	f	137	127
 1581	f	137	47
 1582	f	137	108
@@ -2251,7 +2250,14 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1552	t	135	133
 1462	t	128	81
 1475	t	129	91
-1592	f	138	102
+1501	t	131	96
+1514	t	132	152
+1527	t	133	152
+1540	t	134	152
+1553	t	135	102
+1566	t	136	102
+1579	t	137	102
+1463	t	128	107
 1593	f	138	127
 1594	f	138	47
 1595	f	138	108
@@ -2259,7 +2265,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1597	f	138	49
 1598	f	138	159
 1599	f	138	207
-1605	f	139	102
 1606	f	139	127
 1607	f	139	47
 1608	f	139	108
@@ -2273,7 +2278,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1600	t	139	46
 1537	t	134	55
 1601	t	139	55
-1618	f	140	107
 1619	f	140	134
 1620	f	140	56
 1621	f	140	113
@@ -2281,7 +2285,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1623	f	140	58
 1624	f	140	160
 1625	f	140	208
-1631	f	141	107
 1632	f	141	134
 1633	f	141	56
 1634	f	141	113
@@ -2291,7 +2294,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1638	f	141	208
 1613	t	140	55
 1626	t	141	55
-1644	f	142	107
 1645	f	142	134
 1646	f	142	56
 1647	f	142	113
@@ -2300,7 +2302,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1650	f	142	160
 1651	f	142	208
 1639	t	142	55
-1657	f	143	112
 1658	f	143	138
 1659	f	143	63
 1660	f	143	117
@@ -2308,7 +2309,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1662	f	143	65
 1663	f	143	161
 1664	f	143	209
-1670	f	144	112
 1671	f	144	138
 1672	f	144	63
 1673	f	144	117
@@ -2321,7 +2321,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1602	t	139	62
 860	t	78	62
 1063	t	95	62
-1683	f	145	112
 1684	f	145	138
 1685	f	145	63
 1686	f	145	117
@@ -2383,6 +2382,13 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1656	t	143	87
 1708	t	147	91
 1695	t	146	91
+1605	t	139	102
+1618	t	140	107
+1631	t	141	107
+1644	t	142	107
+1683	t	145	112
+1657	t	143	112
+1670	t	144	112
 1713	f	147	76
 1714	f	147	77
 1715	f	147	165
@@ -2397,7 +2403,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1728	f	148	165
 1729	f	148	210
 1717	t	148	74
-1734	f	149	96
 1735	f	149	164
 1736	f	149	20
 1737	f	149	168
@@ -2406,7 +2411,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1740	f	149	170
 1741	f	149	171
 1742	f	149	211
-1747	f	150	96
 1748	f	150	164
 1749	f	150	20
 1750	f	150	168
@@ -2416,7 +2420,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1754	f	150	171
 1755	f	150	211
 1743	t	150	166
-1760	f	151	96
 1761	f	151	164
 1762	f	151	20
 1763	f	151	168
@@ -2428,7 +2431,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1718	t	148	166
 1730	t	149	166
 1756	t	151	166
-1773	f	152	96
 1774	f	152	164
 1775	f	152	20
 1776	f	152	168
@@ -2439,7 +2441,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1781	f	152	212
 1719	t	148	126
 1731	t	149	126
-1786	f	153	152
 1787	f	153	167
 1788	f	153	29
 1789	f	153	199
@@ -2453,7 +2454,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1769	t	152	126
 1744	t	150	126
 1655	t	143	126
-1799	f	154	102
 1800	f	154	127
 1801	f	154	153
 1802	f	154	172
@@ -2462,7 +2462,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1805	f	154	174
 1806	f	154	175
 1807	f	154	216
-1812	f	155	102
 1813	f	155	127
 1814	f	155	153
 1815	f	155	172
@@ -2480,8 +2479,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1745	t	150	133
 621	t	58	133
 1423	t	125	133
-1824	f	156	96
-1825	f	156	107
 1826	f	156	134
 1827	f	156	38
 1828	f	156	82
@@ -2490,8 +2487,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1831	f	156	84
 1832	f	156	217
 1833	f	156	218
-1837	f	157	96
-1838	f	157	107
 1839	f	157	134
 1840	f	157	38
 1841	f	157	82
@@ -2515,12 +2510,20 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1721	t	148	91
 1798	t	154	91
 1811	t	155	91
+1734	t	149	96
+1747	t	150	96
+1760	t	151	96
+1773	t	152	96
+1824	t	156	96
+1837	t	157	96
+1786	t	153	152
+1799	t	154	102
+1812	t	155	102
+1838	t	157	107
 1843	f	157	83
 1844	f	157	84
 1845	f	157	217
 1846	f	157	218
-1850	f	158	96
-1851	f	158	107
 1852	f	158	134
 1853	f	158	38
 1854	f	158	82
@@ -2529,8 +2532,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1857	f	158	84
 1858	f	158	217
 1859	f	158	218
-1863	f	159	96
-1864	f	159	107
 1865	f	159	134
 1866	f	159	38
 1867	f	159	82
@@ -2540,8 +2541,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1871	f	159	217
 1872	f	159	218
 1821	t	156	81
-1876	f	160	96
-1877	f	160	107
 1878	f	160	134
 1879	f	160	38
 1880	f	160	82
@@ -2553,8 +2552,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1873	t	160	81
 1847	t	158	81
 1860	t	159	81
-1889	f	161	152
-1890	f	161	112
 1891	f	161	138
 1892	f	161	47
 1893	f	161	88
@@ -2567,8 +2564,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1861	t	159	87
 1848	t	158	87
 1886	t	161	87
-1902	f	162	152
-1903	f	162	112
 1904	f	162	138
 1905	f	162	47
 1906	f	162	88
@@ -2577,8 +2572,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1909	f	162	90
 1910	f	162	219
 1911	f	162	220
-1915	f	163	152
-1916	f	163	112
 1917	f	163	138
 1918	f	163	47
 1919	f	163	88
@@ -2587,8 +2580,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1922	f	163	90
 1923	f	163	219
 1924	f	163	220
-1928	f	164	152
-1929	f	164	112
 1930	f	164	138
 1931	f	164	47
 1932	f	164	88
@@ -2597,8 +2588,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1935	f	164	90
 1936	f	164	219
 1937	f	164	220
-1941	f	165	152
-1942	f	165	112
 1943	f	165	138
 1944	f	165	47
 1945	f	165	88
@@ -2607,8 +2596,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1948	f	165	90
 1949	f	165	219
 1950	f	165	220
-1954	f	166	152
-1955	f	166	112
 1956	f	166	138
 1957	f	166	47
 1958	f	166	88
@@ -2622,8 +2609,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1951	t	166	87
 1899	t	162	87
 1912	t	163	87
-1966	f	167	96
-1967	f	167	102
 1968	f	167	116
 1969	f	167	142
 1970	f	167	56
@@ -2648,8 +2633,24 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1965	t	167	91
 1940	t	165	91
 1927	t	164	91
-1979	f	168	96
-1980	f	168	102
+1850	t	158	96
+1863	t	159	96
+1876	t	160	96
+1966	t	167	96
+1902	t	162	152
+1889	t	161	152
+1915	t	163	152
+1928	t	164	152
+1941	t	165	152
+1967	t	167	102
+1851	t	158	107
+1864	t	159	107
+1877	t	160	107
+1955	t	166	112
+1916	t	163	112
+1890	t	161	112
+1903	t	162	112
+1929	t	164	112
 1981	f	168	116
 1982	f	168	142
 1983	f	168	56
@@ -2662,10 +2663,8 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 1952	t	166	176
 1823	t	156	176
 1875	t	160	176
+2080	f	175	224
 1977	t	168	176
-1991	f	169	96
-1992	f	169	152
-1993	f	169	107
 1994	f	169	121
 1995	f	169	146
 1996	f	169	63
@@ -2675,9 +2674,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 2000	f	169	180
 2001	f	169	181
 2002	f	169	222
-2004	f	170	96
-2005	f	170	152
-2006	f	170	107
 2007	f	170	121
 2008	f	170	146
 2009	f	170	63
@@ -2687,9 +2683,6 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 2013	f	170	180
 2014	f	170	181
 2015	f	170	222
-2017	f	171	96
-2018	f	171	152
-2019	f	171	107
 2020	f	171	121
 2021	f	171	146
 2022	f	171	63
@@ -2703,6 +2696,167 @@ COPY public.memory_memoryreview (id, reviewed, memory_id, review_date_id) FROM s
 2003	t	170	91
 1978	t	168	91
 1990	t	169	91
+1488	t	130	96
+1979	t	168	96
+2004	t	170	96
+2017	t	171	96
+1991	t	169	96
+2032	f	172	116
+2033	f	172	167
+2034	f	172	29
+2035	f	172	75
+2036	f	172	183
+2037	f	172	154
+2038	f	172	184
+2039	f	172	185
+2040	f	172	186
+2041	f	172	223
+2045	f	173	116
+2046	f	173	167
+2047	f	173	29
+2048	f	173	75
+2049	f	173	183
+2050	f	173	154
+2051	f	173	184
+2052	f	173	185
+2053	f	173	186
+2054	f	173	223
+2058	f	174	116
+2059	f	174	167
+2060	f	174	29
+2061	f	174	75
+2062	f	174	183
+2063	f	174	154
+2064	f	174	184
+2065	f	174	185
+2066	f	174	186
+2067	f	174	223
+1954	t	166	152
+2042	t	173	152
+2029	t	172	152
+2055	t	174	152
+1992	t	169	152
+2018	t	171	152
+2071	f	175	116
+2072	f	175	167
+2073	f	175	29
+2074	f	175	75
+2075	f	175	183
+2076	f	175	154
+2077	f	175	184
+2078	f	175	185
+2079	f	175	186
+2005	t	170	152
+2084	f	176	116
+2085	f	176	167
+2086	f	176	29
+2087	f	176	75
+2088	f	176	183
+2089	f	176	154
+2090	f	176	184
+2091	f	176	185
+2092	f	176	186
+2093	f	176	224
+2081	t	176	152
+2068	t	175	152
+2097	f	177	121
+2098	f	177	127
+2099	f	177	153
+2100	f	177	168
+2101	f	177	103
+2102	f	177	39
+2103	f	177	104
+2104	f	177	105
+2105	f	177	187
+2106	f	177	224
+2030	t	172	102
+2043	t	173	102
+2056	t	174	102
+2069	t	175	102
+2082	t	176	102
+2095	t	177	107
+2070	t	175	107
+2083	t	176	107
+2044	t	173	107
+1993	t	169	107
+2006	t	170	107
+2019	t	171	107
+2031	t	172	107
+2057	t	174	107
+2094	t	177	102
+382	t	38	102
+1592	t	138	102
+1980	t	168	102
+1825	t	156	107
+430	t	42	107
+765	t	70	107
+2108	f	178	116
+2109	f	178	121
+2110	f	178	167
+2111	f	178	138
+2112	f	178	47
+2113	f	178	172
+2114	f	178	113
+2115	f	178	57
+2116	f	178	114
+2117	f	178	115
+2118	f	178	225
+2119	f	178	226
+2121	f	179	116
+2122	f	179	121
+2123	f	179	167
+2124	f	179	138
+2125	f	179	47
+2126	f	179	172
+2127	f	179	113
+2128	f	179	57
+2129	f	179	114
+2130	f	179	115
+2131	f	179	225
+2132	f	179	226
+2134	f	180	116
+2135	f	180	121
+2136	f	180	167
+2137	f	180	138
+2138	f	180	47
+2139	f	180	172
+2140	f	180	113
+2141	f	180	57
+2142	f	180	114
+2143	f	180	115
+2144	f	180	225
+2145	f	180	226
+2147	f	181	116
+2148	f	181	121
+2149	f	181	167
+2150	f	181	138
+2151	f	181	47
+2152	f	181	172
+2153	f	181	113
+2154	f	181	57
+2155	f	181	114
+2156	f	181	115
+2157	f	181	225
+2158	f	181	226
+2146	t	181	112
+2107	t	178	112
+2133	t	180	112
+2096	t	177	112
+1942	t	165	112
+2120	t	179	112
+2159	f	182	116
+2160	f	182	121
+2161	f	182	164
+2162	f	182	127
+2163	f	182	142
+2164	f	182	56
+2165	f	182	82
+2166	f	182	117
+2167	f	182	64
+2168	f	182	118
+2169	f	182	119
+2170	f	182	189
+2171	f	182	227
 \.
 
 
@@ -2933,6 +3087,11 @@ COPY public.memory_reviewdate (id, date) FROM stdin;
 220	2024-04-01
 221	2024-04-02
 222	2024-04-03
+223	2024-04-05
+224	2024-04-06
+225	2024-03-09
+226	2024-04-08
+227	2024-04-09
 \.
 
 
@@ -3003,21 +3162,21 @@ SELECT pg_catalog.setval('public.django_migrations_id_seq', 19, true);
 -- Name: memory_memory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.memory_memory_id_seq', 171, true);
+SELECT pg_catalog.setval('public.memory_memory_id_seq', 182, true);
 
 
 --
 -- Name: memory_memoryreview_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.memory_memoryreview_id_seq', 2028, true);
+SELECT pg_catalog.setval('public.memory_memoryreview_id_seq', 2171, true);
 
 
 --
 -- Name: memory_reviewdate_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.memory_reviewdate_id_seq', 222, true);
+SELECT pg_catalog.setval('public.memory_reviewdate_id_seq', 227, true);
 
 
 --
