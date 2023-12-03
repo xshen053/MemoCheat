@@ -30,7 +30,7 @@ function CodingProblemCount() {
                 backgroundColor: '#4b2e83', // Your custom color here
               }}
         >
-            Cracked Coding Problems: {codingProblemCount}
+            Cracked Coding Problems: {codingProblemCount} / 100
         </Button>
     );
 }
