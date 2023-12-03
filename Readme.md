@@ -163,22 +163,28 @@ http://127.0.0.1:8000/api/mark_as_reviewed/69/
 
 ### User stories
 
-- [ ] As a user, I want to create new memories.
-- [ ] As a user, I want to know what memories I want to review today and tomorrow
-- [ ] As a user, I want to remove a card (mark as reviewed) when I finish reviewing that card
-- [ ] As a user, if I accidentally review a card, I can withdraw
-- [ ] As a user, I want to have a calendar to know what I need to review everyday
+- [x] As a user, I want to create new memories.
+- [x] As a user, I want to know what memories I want to review today and tomorrow
+- [x] As a user, I want to remove a card (mark as reviewed) when I finish reviewing that card
+- [x] As a user, I want to have a calendar to know what I need to review everyday
+
+- [ ] As a user, I am able to reset curve of a specific memory
+- [ ] As a user, if I accidentally review a memory, I can withdraw (no urgent)
+- [ ] As a user, I want to know review data of each memory, e.g., memory 1 reviewed 5/8, review rate 62.5%
+- [ ] As a user, I want to know how long I spent on each card, default is 0
+- [ ] Create a different card that is daily task!
+
 
 ### Use cases
 
-- [ ] Add a new memory
+- [x] Add a new memory
 - [ ] Delete a memory
 - [ ] Modify a memory
 - [ ] Search a memory
 - [ ] Cannot mark a yesterday memory as finished
 - [ ] Display memory to be reviewed for today and tomorrow using card
 - [ ] Show memory of everyday using a calendar
-- [ ] Provide a mark-as-review button to update memory reviewed today
+- [x] Provide a mark-as-review button to update memory reviewed today
 - [ ] Automatically calculate reviewed date of a memory when it was added and store these info in the postgreSQL
 - [ ] Add duplicate memory, alert user
 - [ ] When a memory is reviewed, click that button, and that card disappeared
