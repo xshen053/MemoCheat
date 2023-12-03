@@ -7,6 +7,7 @@ class Memory(models.Model):
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(auto_now_add=True)
     review_dates = models.ManyToManyField(ReviewDate, through='MemoryReview', related_name='memories')
+    type = models.IntegerField(null=True, blank=True)
 
 class MemoryReview(models.Model):
     memory = models.ForeignKey(Memory, on_delete=models.CASCADE)
