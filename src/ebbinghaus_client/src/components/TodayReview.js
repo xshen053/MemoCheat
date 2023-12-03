@@ -83,7 +83,9 @@ function TodayReview() {
               sx={{
                 maxWidth: 345,
                 margin: "20px auto",
-                backgroundColor: "#e8e3d3",
+                backgroundColor: memory.type === 1 ? "transparent" : "#e8e3d3",
+                backgroundImage: memory.type === 1 ? "url('/wallpaper1.png')" : "none",
+                backgroundSize: 'cover', // Optional based on your design needs
                 transition: "transform 0.3s, box-shadow 0.3s",
                 ":hover": {
                   transform: "scale(1.05)",
@@ -100,8 +102,8 @@ function TodayReview() {
                   color="primary"
                   sx={{
                     marginTop: 2,
-                    backgroundColor: "#4b2e83",
-                    "&:hover": { backgroundColor: "#85754d" },
+                    backgroundColor: memory.type === 1 ? "transparent" : "#4b2e83",
+                    "&:hover": { backgroundColor: "#4b2e83" },
                   }}
                   onClick={() => markMemoryAsReviewed(memory.id)}
                 >
