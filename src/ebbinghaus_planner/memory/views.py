@@ -2,6 +2,7 @@ from rest_framework import generics, status
 from .models import Memory, ReviewDate, MemoryReview
 from .serializers import MemorySerializer
 from .utils import calculate_review_dates
+from .utils import create_daily_dates
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from datetime import date
@@ -28,6 +29,9 @@ class MemoryListCreateView(generics.ListCreateAPIView):
         # Your algorithm to calculate the review dates goes here.
         review_dates_list = calculate_review_dates(memory.created_date)
         
+        if memory.type == 1:
+            review_dates_list = create_daily_dates(memory.created_date)
+
         for review_date in review_dates_list:
             rd, _ = ReviewDate.objects.get_or_create(date=review_date)
             '''

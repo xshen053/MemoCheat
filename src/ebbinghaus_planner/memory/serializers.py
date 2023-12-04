@@ -12,7 +12,7 @@ class MemorySerializer(serializers.ModelSerializer):
     is_coding_problem = serializers.SerializerMethodField()
     class Meta:
         model = Memory
-        fields = ['id', 'title', 'created_date', 'review_dates', 'is_coding_problem']
+        fields = ['id', 'title', 'created_date', 'review_dates', 'is_coding_problem', 'type']
 
     def get_review_dates(self, obj):
         # Retrieve all reviewed dates for the current memory object from the MemoryReview model
