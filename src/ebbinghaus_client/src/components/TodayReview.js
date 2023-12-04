@@ -84,7 +84,7 @@ function TodayReview() {
                 maxWidth: 345,
                 margin: "20px auto",
                 backgroundColor: memory.type === 1 ? "transparent" : "#e8e3d3",
-                backgroundImage: memory.type === 1 ? "url('/wallpaper1.png')" : "none",
+                backgroundImage: memory.type === 1 ? "url('/img1.png')" : "none",
                 backgroundSize: 'cover', // Optional based on your design needs
                 transition: "transform 0.3s, box-shadow 0.3s",
                 ":hover": {
@@ -107,7 +107,7 @@ function TodayReview() {
                   }}
                   onClick={() => markMemoryAsReviewed(memory.id)}
                 >
-                  Mark as Reviewed
+                  {memory.type !== 1 && "Mark as Reviewed"}
                 </Button>
               </CardContent>
             </Card>
