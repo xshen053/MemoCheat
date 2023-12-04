@@ -9,20 +9,28 @@ import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+
+
+
 
 function AddMemory() {
   const [title, setTitle] = useState("");
   const [open, setOpen] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [isDailyType, setIsDailyType] = useState(false);
 
   const handleSubmit = () => {
     axios
       .post("http://127.0.0.1:8000/api/memory/", {
         title: title,
+        type: isDailyType ? 1 : null,
       })
       .then((response) => {
         console.log(response.data);
         setTitle("");
+        setIsDailyType(false); // Resetting the switch state
         setOpen(false);
         setSnackbarOpen(true);
       })
@@ -86,6 +94,18 @@ function AddMemory() {
             onChange={(e) => setTitle(e.target.value)}
             style={{ marginBottom: "20px" }}
           />
+
+          <FormControlLabel
+            control={
+              <Switch
+                checked={isDailyType}
+                onChange={(e) => setIsDailyType(e.target.checked)}
+              />
+            }
+            label="Daily"
+            style={{ marginBottom: "20px" }}
+          />
+          
           <Button
             variant="contained"
             color="primary"
