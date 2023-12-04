@@ -8,11 +8,11 @@ function MemoryTable() {
       .then(response => response.json())
       .then(data => {
         const updatedData = data.map(memory => {
-          const totalPossibleReviews = 13; // This is an example, adjust as needed
+          const totalPossibleReviews = memory.type !== 1 ? 13 : 181; // This is an example, adjust as needed
           const reviewCount = memory.review_dates.length;
           return {
             ...memory,
-            reviewRatio: `${reviewCount}/${totalPossibleReviews}`
+            reviewRatio: `${totalPossibleReviews - reviewCount}/${totalPossibleReviews}`
           };
         });
         setMemories(updatedData);

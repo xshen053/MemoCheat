@@ -12,9 +12,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav style={{ marginBottom: '20px' }}>
-          <Link to="/">Home</Link> | <Link to="/memory-table">Memory Table</Link>
-        </nav>
+        {/* Main content */}
         <Routes>
           <Route path="/" element={
             <div
@@ -35,6 +33,13 @@ function App() {
           <Route path="/memory-table" element={<MemoryTablePage />} />
         </Routes>
         <MemoryCalendar style={{ marginTop: "1000px" }} />
+
+        {/* Navigation bar at the bottom */}
+        <nav style={{ marginTop: '20px', marginBottom: '20px' }}>
+          <Link to="/" style={{ color: 'gold' }}>Home</Link> | 
+          <Link to="/memory-table" style={{ color: 'gold' }}>Memory Table</Link>
+        </nav>
+
       </div>
     </Router>
   );
