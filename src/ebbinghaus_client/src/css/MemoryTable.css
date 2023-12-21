@@ -1,0 +1,5 @@
+/* Add this to your CSS file */
+.row-hover-effect:hover {
+  background-color: #f2f2f2; /* Example color, change as needed */
+  cursor: pointer;
+}
