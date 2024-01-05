@@ -24,7 +24,8 @@ function App() {
                 margin: "0 auto",
               }}
             >
-              <CodingProblemCount />
+              <CodingProblemCount label="Cracked Coding Problems" countCondition={1} total={100} buttonStyle={{ top: '20px', left: '20px' }} />
+              <CodingProblemCount label="Blind 75 " countCondition={2} total={75} buttonStyle={{ top: '60px', left: '20px' }} />
               <AddMemory />
               <TodayReview />
               <TomorrowReview />
