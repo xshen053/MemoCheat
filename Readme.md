@@ -210,4 +210,4 @@ http://127.0.0.1:8000/api/mark_as_reviewed/69/
 - [ ] TODO
 
 ## Deployment
-- [ ] Deploy to aws (optional)
+- [x] Deploy to aws (check this new repo: https://github.com/xshen053/memory-magician)
